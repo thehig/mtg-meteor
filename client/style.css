@@ -1,3 +1,5 @@
+
+/* light-gray body with no padding/margins (for centering purposes) and a nicer font */
 body {
     margin: 0;
     padding: 0;
@@ -5,11 +7,13 @@ body {
     background: #ececec;
 }
 
+/* Centered main div with fixed width */
 #main {
     max-width: 900px;
     margin: auto;
 }
 
+/* medium-grey, bordered login area */
 #login {
     background: #ccc;
     border: 1px solid #474747;
@@ -17,64 +21,40 @@ body {
     padding: 10px;
 }
 
+/* Floating the content to align on screen in columns */
 .column {
     width: 48%;
     float: left;
     padding-right: 2%;
 }
 
-.column:last-of-type {
-    padding: 0 0 0 2%;
-}
+    .column:last-of-type {
+        padding: 0 0 0 2%;
+    }
 
+/* The ongoing games list */
 li a span {
     font-size: 80%;
 }
 
-li a {
-    text-decoration: none;
-    padding: 10px 2px;
-    color: #000;
-}
+    li a {
+        text-decoration: none;
+        padding: 10px 2px;
+        color: #000;
+    }
 
-li a :hover {
-    text-decoration: underline;
-}
-
-
+    li a :hover {
+        text-decoration: underline;
+    }
 
 
-.card {
-    background: #ffffff;
-    border: 1px solid #000;
-    display: inline-block;
-    margin: 10px;
-    width: 112px;
-    height: 175px;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.card div:nth-of-type(1) {
-    font-size: 80px;
-    line-height: 165px;
-}
-.card div:nth-of-type(2) {
-    position: relative;
-    bottom: 40px;
-}
-
-.Coins  { color: gold; }
-.Cups   { color: red; }
-.Swords { color: blue; }
-.Clubs  { color: green; }
-
-
+/* Players Hand */
 #hand .card:hover {
     cursor: pointer;
     transform: rotate(10deg);
 }
 
+/* Make sure the table and hand divs don't collapse when there's no cards on/in them */
 #table, #hand {
     min-height: 250px;
 }
