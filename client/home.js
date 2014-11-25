@@ -8,7 +8,7 @@ function otherId(game){
 }
 
 Template.gameList.helpers({
-    //Provide a games object to the gameList template
+    //Provide a list of the users games to the gameList template
     games: function(){
         //Get only in-progress games
         return Games.find({inProgress: true}).map(function(game){
@@ -22,7 +22,7 @@ Template.gameList.helpers({
 });
 
 Template.userList.helpers({
-    //Provide users data for the userList template
+    //Provide a list of users we are not currently playing against for the userList template
     users: function(){
 
         //You're not allowed play games against yourself
@@ -35,7 +35,7 @@ Template.userList.helpers({
             cantPlayAgainst.push(otherId(game));
         });
 
-        //MongoDB query to find us some games with people we CAN play against
+        //MongoDB query to find us the players we CAN play against
         return Meteor.users.find({ _id: { $not: { $in: cantPlayAgainst}}});
     }
 });

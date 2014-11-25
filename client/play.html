@@ -1,21 +1,27 @@
+
+<!-- Top Level Template -->
 <template name="play">
     {{> signupLogin }}
 
     {{#if currentUser}}
       {{#if inProgress}}
+            <!-- Show the Status, Table and Hand only while the game is in progress-->
         {{> status }}
         {{> table }}
         {{> hand }}
       {{/if}}
+        <!-- Always show the collected pile of cards -->
       {{> pile}}
     {{/if}}
 </template>
 
+<!-- The current game status -->
 <template name="status">
     <p><a href="/">&larr; Home</a></p>
     <h2>Game between you and {{otherPlayer.username}} {{#if inProgress}} {{#if yourTurn}} (Your Turn) {{/if}} {{/if}}</h2>
 </template>
 
+<!-- The cards in play -->
 <template name="table">
   <div id="table">
     <h2>Table</h2>
@@ -28,6 +34,7 @@
   </div>
 </template>
 
+<!-- The cards in hand -->
 <template name="hand">
   <div id="hand">
     <h2>Hand</h2>
@@ -40,6 +47,7 @@
   </div>
 </template>
 
+<!-- The cards the player has collected/scored/matched -->
 <template name="pile">
     <div id="pile">
         <h2>Collected Cards</h2>
