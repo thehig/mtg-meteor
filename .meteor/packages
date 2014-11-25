@@ -6,3 +6,7 @@
 meteor-platform
 autopublish
 insecure
+iron:router
+mrt:moment
+accounts-password
+
