@@ -2,8 +2,27 @@
     {{> signupLogin}}
 
     {{#if currentUser}}
+        {{> gameList }}
         {{> userList }}
     {{/if}}
+</template>
+
+<template name="gameList">
+    <h1> Games </h1>
+    <ul>
+        {{#each games}}
+            {{> gameItem }}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="gameItem">
+    <a href="/game/{{_id}}">Game with {{otherPlayer}}</a>
+    <span>
+        {{#if inProgress}}
+            {{started}}
+        {{/if}}
+    </span>
 </template>
 
 <template name="userList">
