@@ -1,5 +1,7 @@
-
-//Note: No var = Global object
+/**
+ * The collection of currently ongoing games
+ * @type {Mongo.Collection}
+ */
 Games = new Meteor.Collection('games');
 
 
@@ -47,7 +49,9 @@ if(Meteor.isClient){
 //  Simulated on client while server is completing
 Meteor.methods({
     createGame: function(otherPlayerid){
+        //Create a game between the current user and the other player
         var game = GameFactory.createGame([Meteor.userId(), otherPlayerid]);
+        //Add it to the games collection (Persist)
         Games.insert(game);
     }
 });
