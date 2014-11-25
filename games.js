@@ -42,3 +42,12 @@ if(Meteor.isClient){
     Meteor.subscribe('games');
     Meteor.subscribe('users');
 }
+
+//Meteor method:
+//  Simulated on client while server is completing
+Meteor.methods({
+    createGame: function(otherPlayerid){
+        var game = GameFactory.createGame([Meteor.userId(), otherPlayerid]);
+        Games.insert(game);
+    }
+});
